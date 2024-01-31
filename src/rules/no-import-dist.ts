@@ -1,27 +1,27 @@
-import { createEslintRule } from '../utils'
+import { createEslintRule } from "../utils";
 
-export const RULE_NAME = 'no-import-dist'
-export type MessageIds = 'noImportDist'
-export type Options = []
+export const RULE_NAME = "no-import-dist";
+export type MessageIds = "noImportDist";
+export type Options = [];
 
 export default createEslintRule<Options, MessageIds>({
   name: RULE_NAME,
   meta: {
-    type: 'problem',
+    type: "problem",
     docs: {
-      description: 'Prevent importing modules in `dist` folder',
-      recommended: 'recommended',
+      description: "Prevent importing modules in `dist` folder",
+      recommended: "recommended"
     },
     schema: [],
     messages: {
-      noImportDist: 'Do not import modules in `dist` folder, got {{path}}',
-    },
+      noImportDist: "Do not import modules in `dist` folder, got {{path}}"
+    }
   },
   defaultOptions: [],
   create: (context) => {
     function isDist(path: string) {
-      return (path.startsWith('.') && path.match(/\/dist(\/|$)/))
-        || path === 'dist'
+      return (path.startsWith(".") && path.match(/\/dist(\/|$)/))
+        || path === "dist";
     }
 
     return {
@@ -29,13 +29,13 @@ export default createEslintRule<Options, MessageIds>({
         if (isDist(node.source.value)) {
           context.report({
             node,
-            messageId: 'noImportDist',
+            messageId: "noImportDist",
             data: {
-              path: node.source.value,
-            },
-          })
+              path: node.source.value
+            }
+          });
         }
-      },
-    }
-  },
-})
+      }
+    };
+  }
+});

@@ -1,7 +1,5 @@
-import antfu from '@antfu/eslint-config'
+import { curev } from "@curev/eslint-config";
 
-export default antfu(
-  {
-    ignores: ['vendor', '**/*.md'],
-  },
-)
+export default curev({
+  ignores: ["vendor", "**/*.md"]
+});
