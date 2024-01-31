@@ -1,18 +1,17 @@
 {
-  "name": "eslint-plugin-antfu",
+  "name": "@curev/eslint-plugin",
   "type": "module",
-  "version": "2.1.2",
+  "version": "0.3.0",
   "packageManager": "pnpm@8.14.1",
-  "description": "Anthony extended ESLint rules",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "description": "Forked by eslint-plugin-antfu",
+  "author": "Chizuki <chizukicn@outlook.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/eslint-plugin-antfu#readme",
+  "homepage": "https://github.com/curev/eslint-plugin#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/eslint-plugin-antfu.git"
+    "url": "git+https://github.com/curev/eslint-plugin.git"
   },
-  "bugs": "https://github.com/antfu/eslint-plugin-antfu/issues",
+  "bugs": "https://github.com/curev/eslint-plugin/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
@@ -22,7 +21,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "main": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
@@ -31,7 +30,7 @@
   "scripts": {
     "build": "unbuild",
     "dev": "unbuild --stub",
-    "lint": "pnpm run dev && eslint .",
+    "lint": "eslint .",
     "prepublishOnly": "nr build",
     "release": "bumpp && npm publish",
     "start": "esno src/index.ts",
@@ -71,7 +70,7 @@
     "vitest": "^1.2.1"
   },
   "resolutions": {
-    "eslint-plugin-antfu": "workspace:*"
+    "@curev/eslint-plugin": "workspace:*"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

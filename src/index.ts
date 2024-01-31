@@ -7,10 +7,11 @@ import noImportNodeModulesByPath from './rules/no-import-node-modules-by-path'
 import noImportDist from './rules/no-import-dist'
 import noTsExportEqual from './rules/no-ts-export-equal'
 import consistentListNewline from './rules/consistent-list-newline'
+import maxStatementsPerLine from './rules/max-statements-per-line'
 
 const plugin = {
   meta: {
-    name: 'antfu',
+    name: 'curev',
     version,
   },
   rules: {
@@ -21,6 +22,7 @@ const plugin = {
     'no-import-dist': noImportDist,
     'no-ts-export-equal': noTsExportEqual,
     'top-level-function': topLevelFunction,
+    'max-statements-per-line': maxStatementsPerLine,
   },
 } satisfies ESLint.Plugin
 
